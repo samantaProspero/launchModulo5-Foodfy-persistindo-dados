@@ -3,10 +3,10 @@ const data = require("../data.json")
 
 
 exports.home= function(req, res){
-    return res.render("home", {items: data.recipes})
+    return res.render("home/home", {items: data.recipes})
 }
 exports.about =  function(req, res){
-    return res.render("about")
+    return res.render("home/about")
 }
 exports.recipesFiltered = function(req, res){
    
@@ -17,7 +17,7 @@ exports.recipesFiltered = function(req, res){
         recipesFiltered.push(obj)
     }
 
-    return res.render("recipes", {items: recipesFiltered})
+    return res.render("home/recipes", {items: recipesFiltered})
 }
 exports.recipe = function(req, res){
     const {index:recipeIndex} = req.params
@@ -26,14 +26,14 @@ exports.recipe = function(req, res){
     if(!recipe){
         return res.send("Recipe not found!")
     }
-    return res.render("recipe", {item: recipe})
+    return res.render("home/recipe", {item: recipe})
 }
 exports.index = function(req, res){
-    return res.render("admin/index", {data})
+    return res.render("admin/recipes/index", {data})
  }
 
 exports.create = function(req, res){
-    return res.render("admin/create")
+    return res.render("admin/recipes/create")
 }
 exports.post = function(req, res){
     const keys = Object.keys(req.body)
@@ -69,7 +69,7 @@ exports.show = function(req,res){
    const recipe ={
        ...foundRecipe
    }
-   return res.render("admin/show", {item:recipe})
+   return res.render("admin/recipes/show", {item:recipe})
 }
 exports.edit = function(req, res){
     const {id} = req.params
@@ -81,7 +81,7 @@ exports.edit = function(req, res){
     const recipe ={
         ...foundRecipe
     }
-    return res.render("admin/edit", {item:recipe})
+    return res.render("admin/recipes/edit", {item:recipe})
 }
 exports.put = function(req,res){
     const {id} = req.body

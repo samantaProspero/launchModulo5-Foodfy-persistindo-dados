@@ -309,19 +309,22 @@ footer p{
     width: 940px;
     margin: 0 auto;
 }
-.header-recipe{
+.header-recipe,
+.header-chef{
     display: grid;
     grid-template-columns: 1fr 150px;
     align-items: center;
 }
-.header-recipe h1{
+.header-recipe h1,
+.header-chef h1{
     font-size: 24px;
     line-height: 28px;
     font-weight: bold;
     margin-top: 50px;
     margin-bottom: 30px;
 }
-.header-recipe .button{
+.header-recipe .button,
+.header-chef .button{
     font-size: 16px;
     line-height: 19px;
     font-weight: bold;
@@ -333,7 +336,8 @@ footer p{
     text-decoration: none;
     
 }
-.content-create h4{
+.content-create h4,
+.card-details h4{
     font-size: 16px;
     line-height: 19px;
     font-weight: bold;
@@ -357,7 +361,8 @@ footer p{
     line-height: 24px;
    
 }
-.content-create a{
+.content-create a, 
+.card-details a{
     text-decoration: none;
     font-size: 16px;
     line-height: 19px;
@@ -415,4 +420,43 @@ footer p{
     font-weight: bold;
     text-align: right;
     margin-top: 15px;
+}
+.card-chefs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 8px;
+}
+.card-chef{
+    display: grid;
+    grid-template-columns: 64px 1fr;
+}
+.card-chef .card-img img{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.card-chef .card-details h4{
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: normal;
+    padding: 0 20px;
+    margin-top: 5px;
+
+}
+.card-chef .card-details a{
+    padding: 0 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #6558C3;
+}
+.card-chef-show{
+    width: 100%;
+}
+.card-chef-show img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }

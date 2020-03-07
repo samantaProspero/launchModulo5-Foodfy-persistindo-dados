@@ -11,7 +11,7 @@
         <input type="hidden" name="id" value="{{item.id}}">
     </form>
     <form id="form-edit" class="content-create" method="POST" action="/admin/recipes?_method=PUT">
-        {% include 'admin/fields.njk'%}
+        {% include 'admin/recipes/fields.njk'%}
         <input type="hidden" name="id" value="{{item.id}}" >
     </form>
 </main>

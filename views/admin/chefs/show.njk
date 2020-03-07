@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <main>
+        <div class="content-chef">
+            <div class="header-chef">
+                <h1 class="show" >Chef: {{item.name}}</h1>
+                <a href="/admin/chefs/{{item.id}}/edit" class="button">Editar Chef</a>
+            </div>
+                <div class="card-chef-show" id="{{item.avatar}}">
+                    <img src="{{item.avatar}}" alt="{{item.name}}">
+                    <div class="card_author">
+                        <h1> {{item.name}}</h1>
+                    </div>
+                    <div class="card_qtd"><h4>quantidade de receitas</h4></div>
+                </div>        
+            </div>
+        </div>
+    </main>
+{% endblock content %}
