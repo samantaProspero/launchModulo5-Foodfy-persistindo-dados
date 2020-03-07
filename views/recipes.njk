@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <main>
+        <div class="content">
+            {% for item in items %}
+                <div class="card" id="{{item.image}}">
+                    <img src="{{item.image}}" alt="{{item.name}}">
+                    <div class="card_title">
+                        <h4>{{item.title}}</h4>
+                    </div>
+                    <div class="card_author">
+                        <p>por {{item.author}}</p>
+                    </div>
+                        <a class="button" href="/recipes/{{item.index}}">Ver Receita</a>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock content %}
+    
+                
