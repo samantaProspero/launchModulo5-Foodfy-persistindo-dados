@@ -110,7 +110,7 @@ module.exports = [
     ],
     information: 'Não lave o macarrão nem passe óleo ou gordura nele depois de escorrê-lo. Coloque direto na frigideira.'
   },
-  {
+  { 
     image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/doce.png',
     title: 'Docinhos pão-do-céu',
     author: 'Ricardo Golvea',

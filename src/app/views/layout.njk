@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Foodfy</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <img src="/assets/logo.png">
+                <div class="links menu">
+                    <a href="/admin/recipes">Receitas</a>
+                    <a href="/admin/chefs">Chefs</a>
+                </div>
+                <form class="filter" action="/admin/recipes" method="GET">
+                    <input 
+                        type="text" 
+                        name="filter" 
+                        placeholder="Buscar receita" 
+                        value={{filter}}>
+                    <button type="submit" class="button">Buscar</button>
+                </form>
+            </header>
+            {% block content %}
+            {% endblock content %}
+        </div>
+        
+        <footer>
+            <p>Todos direitos reservados, receitas Foodfy.</p> 
+        </footer>
+        <script src="/scripts.js"></script>
+    </body>
+</html>

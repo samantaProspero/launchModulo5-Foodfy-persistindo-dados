@@ -1,0 +1,76 @@
+    <h4>Imagem da receita</h4>
+    <input 
+        type="url"
+        name="image" 
+        class="input-create" 
+        value="{{recipe.image}}">
+
+    <h4>Título da receita</h4>
+    <input 
+        type="text" 
+        name="title" 
+        class="input-create" 
+        value="{{recipe.title}}">
+
+    
+    <div class="item">
+        <div><h4>Autor da receita</h4></div>
+        <div class="author">
+            <select name="author" class="option-author">
+                <option disabled selected>Selecione um Chef</option>
+                {% for chef in chefOptions %}
+                    <option
+                    value="{{ chef.id }}" {% if recipe.chef_id == chef.id %} selected {% endif %}>
+                        {{ chef.name }} 
+                    </option>
+                {%endfor%}
+            </select>
+        </div>
+    </div>
+    <div id="ingredients"> 
+        <h4>Ingredientes</h4>
+        {% if recipe %}
+        {% for ingredient in recipe.ingredients %}
+            <div class="ingredient">
+                    <input 
+                    type="text" 
+                    name="ingredients[]" 
+                    value="{{ingredient}}"
+                    placeholder="Add Ingredient">
+            </div>
+        {% endfor %}
+        {%else%}
+            <div class="ingredient">
+                    <input 
+                    type="text" 
+                    name="ingredients[]">
+            </div>
+        {%endif%}
+    </div>
+    <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+    
+    <div id="preparations">
+        <h4>Modo de Preparo</h4>
+        {% if recipe %}
+        {% for preparation in recipe.preparation %}
+            <div class="preparation">
+                    <input 
+                    type="text" 
+                    name="preparation[]" 
+                    value="{{preparation}}"
+                    placeholder="Add Preparation">
+            </div>
+        {% endfor %}
+        {%else%}
+            <div class="preparation">
+                    <input 
+                    type="text" 
+                    name="preparation[]">
+            </div>
+        {%endif%}
+    </div>
+    <button type="button" class="add-preparation">Adicionar novo passo</button>
+
+    <h4>Informações adicionais</h4>
+    <textarea name="information" id="create-info" cols="30" rows="10">{{recipe.information}}</textarea>
+

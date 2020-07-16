@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <main>
+        <div class="content-recipe">
+        <div class="header-recipe">
+            <h1 class="show" >Receita: {{recipe.title}}</h1>
+            <a href="/admin/recipes/{{recipe.id}}/edit" class="button">Editar Receita</a>
+        </div>
+            <div class="card" id="{{recipe.image}}">
+                <img src="{{recipe.image}}" alt="{{recipe.title}}">
+                <div class="card_title"><h1>{{recipe.title}}</h1></div>
+                <div class="card_author">
+                    <h4> {{recipe.chef_name}}</h4>
+                </div>
+            </div>        
+            <div class="recipe-details">
+                <div id="ingredients" class="topic">
+                    <h3>Ingredientes</h3>
+                    <div class="topic-content">
+                        <ul>
+                            {% for ingredient in recipe.ingredients %}
+                                <li>{{ingredient}}</li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                </div>
+                <div id="preparation" class="topic">
+                    <h3>Preparo</h3>
+                    <div class="topic-content">
+                        <ul>
+                            {% for preparation in recipe.preparation %}
+                                <li>{{preparation}}</li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                </div>
+                <div id="information" class="topic">
+                    <h3>Informações</h3>
+                    <div class="topic-content">
+                        <p>{{recipe.information}}</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </main>
+{% endblock content %}
