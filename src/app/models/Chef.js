@@ -35,15 +35,15 @@ module.exports ={
         })
     },
     find(id, cb){ 
-        db.query(`
-      SELECT chefs.*, count(recipes) AS total_recipes
-      FROM chefs
-      LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
-      GROUP BY chefs.id
-      HAVING chefs.id = $1`, [id], function(err, results){
-        if (err) throw `Database Error! ${err}`
-        
-        cb(results.rows[0])
+      db.query(`
+        SELECT chefs.*, count(recipes) AS total_recipes
+        FROM chefs
+        LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+        WHERE chefs.id = $1
+        GROUP BY chefs.id`, [id], function(err, results){
+      if (err) throw `Database Error! ${err}`
+      
+      cb(results.rows[0])
     }) 
     },
     chefsSelectRecipes(id, callback) { // A SOLUCAO É INSERIR UM "ID" COMO PARAMETRO
